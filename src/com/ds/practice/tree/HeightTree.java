@@ -1,20 +1,23 @@
 package com.ds.practice.tree;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HeightTree {
 
     TreeNode root;
 
-    static class TreeNode{
+    static class TreeNode {
         int data;
         TreeNode leftTree, rightTree;
 
-        public TreeNode(int data){
+        public TreeNode(int data) {
             this.data = data;
         }
     }
 
-    public void insert(int item){
-        if(root == null) {
+    public void insert(int item) {
+        if (root == null) {
             root = new TreeNode(item);
         }
 
@@ -22,35 +25,35 @@ public class HeightTree {
     }
 
     private void insert(TreeNode subTree, int item) {
-        if (subTree.data == item){
+        if (subTree.data == item) {
             return;
         }
 
-        if(item > subTree.data){
-            if(subTree.rightTree == null){
+        if (item > subTree.data) {
+            if (subTree.rightTree == null) {
                 subTree.rightTree = new TreeNode(item);
-            }else{
+            } else {
                 insert(subTree.rightTree, item);
             }
-        }else{
-            if(subTree.leftTree == null){
+        } else {
+            if (subTree.leftTree == null) {
                 subTree.leftTree = new TreeNode(item);
-            }else{
+            } else {
                 insert(subTree.leftTree, item);
             }
         }
     }
 
-    public int height(){
-        if(root == null) {
+    public int height() {
+        if (root == null) {
             return 0;
         }
 
         return treeHeight(root);
     }
 
-    public int treeHeight(TreeNode subTree){
-        if(subTree == null){
+    public int treeHeight(TreeNode subTree) {
+        if (subTree == null) {
             return 0;
         }
 
@@ -67,9 +70,11 @@ public class HeightTree {
         tree.insert(15);
         tree.insert(25);
         tree.insert(12);
-      //  tree.insert(30);
-     //   tree.insert(10);
-       // tree.insert(27);
+        tree.insert(30);
+        tree.insert(10);
+        tree.insert(27);
+
+        List<Integer> in = new ArrayList<Integer>();
 
         System.out.println(tree.height());
     }
