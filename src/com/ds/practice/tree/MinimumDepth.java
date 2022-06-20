@@ -1,5 +1,6 @@
 package com.ds.practice.tree;
 
+import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -26,7 +27,28 @@ public class MinimumDepth {
         tree.root.left.right = new Node(5);
 
         System.out.println("The minimum depth of " +
-                "binary tree is : " + tree.minimumDepth());
+                "binary tree is : " + tree.recursiveMinDepth());
+    }
+
+    private int recursiveMinDepth() {
+        return recursiveMinDepth(root);
+    }
+
+    private int recursiveMinDepth(Node root) {
+        if (root == null) {
+            return 0;
+        }
+
+        int lHeight = recursiveMinDepth(root.left);
+        int rHeight = recursiveMinDepth(root.right);
+
+        if (lHeight < rHeight) {
+            return lHeight + 1;
+        } else if (rHeight < lHeight) {
+            return rHeight + 1;
+        } else {
+            return 0;
+        }
     }
 
     public int minDepthBfs() {
@@ -90,4 +112,24 @@ public class MinimumDepth {
         return Math.min(minimumDepth(node.right), minimumDepth(node.left)) + 1;
     }
 
+
+    int getMaxWidth(Node root) {
+        // Your code here
+        ArrayDeque<Node> q = new ArrayDeque<>();
+        int res = 0;
+        Node cur;
+        q.offer(root);
+
+        while (!q.isEmpty()) {
+            int count = q.size();
+            res = Math.max(res, count);
+
+            for (int i = 0; i < count; i++) {
+                cur = q.poll();
+                if (cur.left != null) q.offer(cur.left);
+                if (cur.right != null) q.offer(cur.right);
+            }
+        }
+        return res;
+    }
 }
