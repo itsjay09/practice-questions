@@ -1,4 +1,4 @@
-package com.ds.practice.other;
+package com.ds.practice.string;
 
 import java.util.ArrayDeque;
 import java.util.Queue;

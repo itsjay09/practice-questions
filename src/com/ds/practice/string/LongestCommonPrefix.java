@@ -4,7 +4,7 @@ public class LongestCommonPrefix {
 
     public static void main(String[] args) {
         //String[] arr = {"geeksforgeeks", "geeks", "geek", "geezer" };
-        String[] arr = {"apple", "ape", "april" };
+        String[] arr = {"lapple", "pape", "hapril" };
         String s = checkCommonPrefixApp2(arr, arr.length);
         System.out.println(s);
     }
@@ -19,6 +19,9 @@ public class LongestCommonPrefix {
             // String iteration
             for (int j = 1; j < n; j++) {
                 if (arr[j].charAt(i) != curr) {
+                    if(strRet.isEmpty()){
+                        return String.valueOf(-1);
+                    }
                     return strRet;
                 }
             }
