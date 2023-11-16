@@ -32,7 +32,6 @@ public class CustomTree {
         inOrderPrint(node.left);
         System.out.print(node.data + " ");
         inOrderPrint(node.right);
-
     }
 
     public void inOrderPrint() {
@@ -110,9 +109,4 @@ public class CustomTree {
             this.data = data;
         }
     }
-
-
-
-
-
 }

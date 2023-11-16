@@ -1,7 +1,9 @@
-package com.ds.practice;
+package com.ds.practice.sorting;
 
-public class PracticeClass {
+public class Main {
+
     public static void main(String[] args) {
+
 
     }
 }

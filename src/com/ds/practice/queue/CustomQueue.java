@@ -22,13 +22,13 @@ public class CustomQueue<T> {
         queue.add(15);
 
         queue.printQueue();
-        System.out.println("Remove  "+ queue.remove());
+        System.out.println("Remove  " + queue.remove());
         queue.printQueue();
 
     }
 
-    public void add(T value){
-        if(last == 0){
+    public void add(T value) {
+        if (last == 0) {
             array[first] = value;
             last++;
             return;
@@ -38,21 +38,23 @@ public class CustomQueue<T> {
         last++;
     }
 
-    public T peek(){
+    public T get() {
         return (T) array[last - 1];
     }
 
-    public T remove(){
+    public T peek() {
+        return (T) array[last - 1];
+    }
+
+    public T remove() {
         T test = (T) array[first];
         first++;
         return test;
     }
 
-    public void printQueue(){
+    public void printQueue() {
         for (int i = first; i < last; i++) {
             System.out.println(array[i]);
         }
     }
-
-
 }

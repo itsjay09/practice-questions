@@ -25,6 +25,7 @@ public class EquilibriumPoint {
     }
 
     // Time complexity of O(n * n)
+    // { 1, 3, 5, 2, 2 }
     public static int equilibriumPoint1(long arr[], int n) {
         if (n == 1) {
             return 1;
