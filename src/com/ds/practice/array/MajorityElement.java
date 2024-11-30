@@ -27,11 +27,12 @@ public class MajorityElement {
     }
 
 
-    // calculate each key and its accourence
-    // check which orrurence of match
+    // 1. calculate each key and its occurrence
+    // 2. check which occurrence of match
     static int majorityElement(int a[], int size) {
 
         Map<Integer, Integer> map = new HashMap<>();
+
         for (int i = 0; i <= size - 1; i++) {
             if (map.containsKey(a[i])) {
                 map.put(a[i], map.get(a[i]) + 1);
@@ -47,5 +48,4 @@ public class MajorityElement {
         }
         return -1;
     }
-
 }

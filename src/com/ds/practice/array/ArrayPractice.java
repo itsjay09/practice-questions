@@ -4,7 +4,16 @@ public class ArrayPractice {
 
     public static void main(String[] args) {
         int[] array = new int[]{9, 2, 3, 4, 5, 7};
-        System.out.println(checkIfArrayIsSorted(array));
+
+        searchingInArray(args);
+    }
+
+
+    public static void searchingInArray(String[] args) {
+        System.out.println(args.length);
+        for (int i = 0; i < args.length; i++) {
+            System.out.println(args[i]);
+        }
     }
 
     // check if array is sorted

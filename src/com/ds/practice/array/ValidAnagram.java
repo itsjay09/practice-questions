@@ -29,7 +29,7 @@ public class ValidAnagram {
         return true;
     }
 
-    //count char in string and store
+    // count char in string and store
     // check the both count from both Map
     public static boolean checkIfValidAnagram2(String s, String t) {
 

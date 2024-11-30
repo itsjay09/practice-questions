@@ -3,20 +3,27 @@ package com.ds.practice.recursion;
 public class PrintNumber {
 
     public static void main(String[] args) {
-        printFromNto1(10);
-        System.out.println();
-        printFrom1toN(10);
+
+        printFrom1toN(12);
     }
 
     private static void printFromNto1(int n) {
-        if (n == 0) return;
+        if (n == 0) {
+            return;
+        }
+
         System.out.print(n +", ");
+
         printFromNto1(n - 1);
     }
 
     private static void printFrom1toN(int n) {
-        if (n == 0) return;
+        if (n == 0) {
+            return;
+        }
+
         printFrom1toN(n - 1);
+
         System.out.print(n +", ");
     }
 

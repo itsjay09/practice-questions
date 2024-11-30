@@ -8,6 +8,7 @@ public class EquilibriumPoint {
     }
 
     // Time complexity of O(n)
+    // {1,3,5,2,2}
     public static int equilibriumPoint(long arr[], int n) {
         int leftSum = 0;
         int sum = 0;

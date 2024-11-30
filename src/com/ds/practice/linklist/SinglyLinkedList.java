@@ -2,7 +2,7 @@ package com.ds.practice.linklist;
 
 public class SinglyLinkedList {
 
-    Node first;
+    Node head;
     int size;
 
     public static void main(String[] args) {
@@ -13,22 +13,22 @@ public class SinglyLinkedList {
         sll.add(12);
         sll.insertAtLast(16);
 
-        sll.pringLL();
+        sll.printLL();
         System.out.println("");
        // System.out.println("deleted Node :-> "+ sll.deleteElement(16).data);
         sll.insertAtIndex(77, 3);
-        sll.pringLL();
+        sll.printLL();
     }
 
     public void insertAtIndex(int data, int index){
-        if(first == null){
-            first = new Node(data);
+        if (head == null) {
+            head = new Node(data);
             return;
         }
 
         Node newNode = new Node(data);
         int count = 1;
-        Node tempNode = first;
+        Node tempNode = head;
 
         while (tempNode != null){
             if(count == index - 1 ){
@@ -42,13 +42,13 @@ public class SinglyLinkedList {
     }
 
     public Node deleteElement(int data){
-        if(first.data == data){
-            first = first.next;
-            return first;
+        if (head.data == data) {
+            head = head.next;
+            return head;
         }
 
         Node ret = null;
-        Node tempNode = first;
+        Node tempNode = head;
         while (tempNode != null) {
             if(tempNode.next.data == data){
                 ret = tempNode.next;
@@ -62,24 +62,24 @@ public class SinglyLinkedList {
     }
 
     public void add(int data) {
-        if (first == null) {
-            first = new Node(data);
+        if (head == null) {
+            head = new Node(data);
             return;
         }
 
         Node newNode = new Node(data);
-        newNode.next = first;
-        first = newNode;
+        newNode.next = head;
+        head = newNode;
         size++;
     }
 
     public void insertAtLast(int data) {
-        if (first == null) {
-            first = new Node(data);
+        if (head == null) {
+            head = new Node(data);
             return;
         }
 
-        Node tempNode = first;
+        Node tempNode = head;
         while (tempNode != null) {
             if (tempNode.next == null) {
                 Node newNode = new Node(data);
@@ -90,8 +90,8 @@ public class SinglyLinkedList {
         }
     }
 
-    public void pringLL() {
-        Node tempNode = first;
+    public void printLL() {
+        Node tempNode = head;
         System.out.print("");
         while (tempNode != null) {
             System.out.print(tempNode.data + " -> ");
@@ -101,9 +101,7 @@ public class SinglyLinkedList {
     }
 
 
-
-
-    static class Node {
+    public static class Node {
         int data;
         Node next;
 

@@ -1,6 +1,9 @@
 package com.ds.practice.array;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class CommonElementArray {
 
@@ -14,9 +17,7 @@ public class CommonElementArray {
 
         ArrayList<Integer> integers = commonElements(A, B, C, n1, n2, n3);
         System.out.println(integers);
-
     }
-
 
     static ArrayList<Integer> commonElements1(int A[], int B[], int C[], int n1, int n2, int n3) {
         ArrayList<Integer> list = new ArrayList<>();
@@ -59,6 +60,4 @@ public class CommonElementArray {
         }
         return new ArrayList<>(setC);
     }
-
-
 }
